@@ -18,28 +18,32 @@ exports.register = asyncHandler(async(req,res)=>{
         return res.status(400).json({error:'email and password are required'});
     }
   
-    const user = await User.create({
-        email,password
-    });
+    const user = await User.create({email,password});
     
-    res.status(201).json({id: user._id});
+    return res.status(201).json({id: user._id});
   }
    catch(err){
-        if(err.code===11000)
+    console.error("Error during registration:", err);
+    const code = err.code || (err.cause && err.cause.code);
+        if(code===11000)
         {
             return res.status(409).json({error:'email already exists'});
-            console.log(err);
         }
+         return res.status(500).json({ error: "registration failed" });
         
     }
     
-//return res.status(500).json({ error: "registration failed" });
+
 
 });
 
 
 exports.login= asyncHandler(async(req,res)=>{
     const {email,password}= req.body;
+    
+    if (!email || !password) {
+      return res.status(400).json({ error: "email and password are required" });
+    }
     const user= await User.findOne({email});
     if(!user|| !(await bcrypt.compare(password,user.password)))
     {
