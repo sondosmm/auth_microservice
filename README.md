@@ -28,7 +28,7 @@ A complete authentication system featuring JWT tokens, refresh tokens, and Mongo
 ```bash
 # Clone the repository
 git clone https://github.com/YOUR_USERNAME/auth-microservice.git
-cd auth-microservice
+cd auth-microservice/auth
 
 # Install dependencies
 npm install
