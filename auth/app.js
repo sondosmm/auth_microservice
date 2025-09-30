@@ -17,7 +17,7 @@ app.use((err,req,res,next)=>{
     res.status(500).json({error:'Something broke'});
 });
 
-app.use('/api',authRoutes);
+app.use('/api/auth',authRoutes);
 
 connectDB();
 
