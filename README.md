@@ -1,51 +1,31 @@
+# 🔐 Node.js Authentication Microservice
 
-🔐 Node.js Authentication Microservice
-
-
-
-
-
+![Node.js](https://img.shields.io/badge/Node.js-18%2B-green)
+![Express](https://img.shields.io/badge/Express-5%2B-lightgrey)
+![MongoDB](https://img.shields.io/badge/MongoDB-7%2B-blue)
+![JWT](https://img.shields.io/badge/JWT-Auth-orange)
 
 A complete authentication system featuring JWT tokens, refresh tokens, and MongoDB storage.
 
-📦 Features
+## 📦 Features
+- **User Registration** with email/password
+- **Secure Login** with JWT tokens
+- **Access Tokens** (15-minute expiry)
+- **Refresh Tokens** (7-day expiry)
+- **Protected Routes** with middleware
+- **HTTP-only Cookies** for security
+- **Password Hashing** using bcryptjs
+- **Error Handling** middleware
 
-User Registration with email/password
+## 🚀 Quick Start
 
-Secure Login with JWT tokens
+### Prerequisites
+- Node.js 18+
+- MongoDB 6+
+- Git
 
-Single active session per user (login allowed from one device only)
-
-Access Tokens (15-minute expiry)
-
-Refresh Tokens (7-day expiry)
-
-Refresh Token stored in MongoDB (only one per user)
-
-Logout endpoint (removes refresh token → user can log in again)
-
-Protected Routes with middleware
-
-HTTP-only Cookies for security
-
-Password Hashing using bcryptjs
-
-Error Handling middleware
-
-
-🚀 Quick Start
-
-Prerequisites
-
-Node.js 18+
-
-MongoDB 6+
-
-Git
-
-
-Installation
-
+### Installation
+```bash
 # Clone the repository
 git clone https://github.com/YOUR_USERNAME/auth-microservice.git
 cd auth-microservice/auth
