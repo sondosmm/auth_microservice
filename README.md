@@ -5,79 +5,26 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-7%2B-blue)
 ![JWT](https://img.shields.io/badge/JWT-Auth-orange)
 
-A complete authentication system featuring JWT tokens, refresh tokens, and MongoDB storage.
+A lightweight authentication system using Node.js, Express, MongoDB, and JWT.
 
 ## 📦 Features
-- **User Registration** with email/password
-- **Secure Login** with JWT tokens
-- **Access Tokens** (15-minute expiry)
-- **Refresh Tokens** (7-day expiry)
-- **Protected Routes** with middleware
-- **HTTP-only Cookies** for security
-- **Password Hashing** using bcryptjs
-- **Error Handling** middleware
+- User registration & login
+- Single-device login (one active session per user)
+- Access tokens (15m) + refresh tokens (7d)
+- Logout removes refresh token
+- Protected routes with middleware
+- HTTP-only cookies & bcrypt password hashing
 
-
-# 🔑 Authentication Flow
-
-1. Register → POST /api/auth/register
-
-Creates a new user.
-
-
-
-2. Login → POST /api/auth/login
-
-If user already has a refresh token stored, login is denied with "user already logged in".
-
-Otherwise, generates new access + refresh tokens and stores refresh token in DB.
-
-
-
-3. Refresh → POST /api/auth/refresh
-
-Validates refresh token from cookies.
-
-Rotates refresh token (replaces old one in DB).
-
-Issues new access + refresh tokens.
-
-
-
-4. Logout → POST /api/auth/logout
-
-Deletes the user’s refresh token from DB.
-
-Clears cookies.
-
-User can now log in again from any device.
-
+## 🔑 Flow
+1. POST /register → create account  
+2. POST /login → login (fails if already logged in elsewhere)  
+3. POST /refresh → get new access token  
+4. POST /logout → clear refresh token  
 
 ## 🚀 Quick Start
-
-### Prerequisites
-- Node.js 18+
-- MongoDB 6+
-- Git
-
-### Installation
 ```bash
-# Clone the repository
-git clone https://github.com/YOUR_USERNAME/auth-microservice.git
+git clone https://github.com/sondosmm/auth-microservice.git
 cd auth-microservice/auth
-
-# Install dependencies
 npm install
-
-# Set up environment variables
-cp .env.example .env
-# Edit .env with your credentials
-
-# Start the development server
+cp .env.example .env   # update with your values
 npm run dev
-
-
-
-
-
-
