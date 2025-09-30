@@ -17,30 +17,8 @@ A complete authentication system featuring JWT tokens, refresh tokens, and Mongo
 - **Password Hashing** using bcryptjs
 - **Error Handling** middleware
 
-## 🚀 Quick Start
 
-### Prerequisites
-- Node.js 18+
-- MongoDB 6+
-- Git
-
-### Installation
-```bash
-# Clone the repository
-git clone https://github.com/YOUR_USERNAME/auth-microservice.git
-cd auth-microservice/auth
-
-# Install dependencies
-npm install
-
-# Set up environment variables
-cp .env.example .env
-# Edit .env with your credentials
-
-# Start the development server
-npm run dev
-
-🔑 Authentication Flow
+# 🔑 Authentication Flow
 
 1. Register → POST /api/auth/register
 
@@ -73,6 +51,32 @@ Deletes the user’s refresh token from DB.
 Clears cookies.
 
 User can now log in again from any device.
+
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18+
+- MongoDB 6+
+- Git
+
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/auth-microservice.git
+cd auth-microservice/auth
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env
+# Edit .env with your credentials
+
+# Start the development server
+npm run dev
+
+
 
 
 
