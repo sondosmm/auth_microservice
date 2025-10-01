@@ -23,7 +23,7 @@ A lightweight authentication system using Node.js, Express, MongoDB, and JWT.
 
 ## 🚀 Quick Start
 ```bash
-git clone https://github.com/sondosmm/auth-microservice.git
+git clone https://github.com/sondosmm/auth_microservice.git
 cd auth-microservice/auth
 npm install
 cp .env.example .env   # update with your values
